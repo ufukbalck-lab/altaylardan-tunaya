@@ -6,6 +6,19 @@
     <title>Admin</title>
   </head>
   <body>
+    <!-- NETLIFY IDENTITY (şifre belirleme / reset burada çalışır) -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+    <!-- CMS -->
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
+    <script>
+      // Login olunca admin sayfasında kalsın
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    </script>
   </body>
 </html>
