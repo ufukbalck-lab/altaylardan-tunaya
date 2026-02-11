@@ -2,6 +2,8 @@ backend:
   name: github
   repo: ufukbalck-lab/altaylardan-tunaya
   branch: main
+  auth_type: implicit
+  app_id: ""
 
 
 media_folder: "assets/uploads"
