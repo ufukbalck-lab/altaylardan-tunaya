@@ -1,0 +1,35 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "site"
+    label: "Site Ayarları"
+    files:
+      - file: "content/site.json"
+        label: "Genel"
+        name: "general"
+        fields:
+          - { label: "Site Başlığı", name: "title", widget: "string" }
+          - { label: "Hero Yazısı", name: "heroText", widget: "string" }
+          - { label: "Logo", name: "logo", widget: "image", required: false }
+          - { label: "Instagram Link", name: "instagram", widget: "string", required: false }
+          - { label: "WhatsApp Link", name: "whatsapp", widget: "string", required: false }
+
+  - name: "menu"
+    label: "Menü"
+    files:
+      - file: "content/menu.json"
+        label: "Ürünler"
+        name: "items"
+        fields:
+          - label: "Ürün Listesi"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Ad", name: "name", widget: "string" }
+              - { label: "Fiyat", name: "price", widget: "string" }
+              - { label: "Foto", name: "image", widget: "image", required: false }
